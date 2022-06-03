@@ -11,7 +11,7 @@ Minimal **Rust** development template for **Nix**
 <br><br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Rustacean-orig-noshadow.svg/768px-Rustacean-orig-noshadow.svg.png?20220509231635" align="right" width="20%">
 #### Who is this for 
-- Someone who wants to apply Nix's power to development with Rust.
+- Someone who wants to apply Nix's power for Rust development.
 - Who's not very comfortable with Flakes (you still need to have a basic understanding)
 - Need something minimal that *just works*™
 #### Reference
