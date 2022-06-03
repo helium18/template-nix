@@ -16,7 +16,7 @@ Minimal **Rust** development template for **Nix**
 - Need something minimal that *just works*™
 <br><br>
 #### 📖 Reference
-1. [wiki/Flakes](https://nixos.wiki/wiki/Flakes) !!Read the output schema carefully (especially `defaultPackage`, `legacyPackages` and `devShells`)!!
+1. [wiki/Flakes](https://nixos.wiki/wiki/Flakes)❗Read the output schema carefully (especially `defaultPackage`, `legacyPackages` and `devShells`)❗
 2. [Fenix](https://github.com/nix-community/fenix) - used for managing Rust toolchains (read the `makeRustPlatform` example)
 3. [rust-section of language frameworks](https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/rust.section.md#cargo-features-cargo-features) - optional (use it for extending the template)
 <br><br>
