@@ -33,9 +33,12 @@ fork, clone and use it to your liking
 - `nix run`: runs the Rust program.
 <br><br>
 #### ❗ Note
-The project provides a `Cargo.lock` and `flake.lock` by default.<br>
+The project provides a `Cargo.lock` and `flake.lock` by default.
+
 It's recommended to remove both of them (only for the initial setup) and then run `nix develop` followed by `cargo run` to generate new `Cargo.lock` & `flake.lock`s. You might get errors such as:
+
 1. `warning: Git tree '/path/to/template-nix' is dirty`: fix it by adding all the new files and committing them (`git add . && git commit`)
+
 2. `error: getting status of '/nix/store/bryn21y46m9bpl8bp7gg4jfbhb4a4scz-source/Cargo.lock': No such file or directory`: fix it by adding and committing `flake.lock` to the git repository.
 <br><br>
 #### 🤓 FAQ
