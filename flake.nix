@@ -21,17 +21,27 @@
       {
         # called when `nix build` / `nix run` is invoked
         defaultPackage = (pkgs.makeRustPlatform {
-          inherit (fenix.packages.${system}.minimal) cargo rustc; # use nightly rustc & cargo to run/build stuff by fenix
+
+          # use nightly rustc and cargo provided by fenix to run/build stuff 
+          # options: minimal | complete
+          inherit (fenix.packages.${system}.minimal) cargo rustc;
         }).buildRustPackage {
           pname = pname;
           version = version;
           src = ./.;
-          cargoLock.lockFile = ./Cargo.lock; # cargoHash isn't taken: https://github.com/nix-community/fenix/issues/70#issuecomment-1114333311
+
+          # cargohash isn't taken: https://github.com/nix-community/fenix/issues/70#issuecomment-1114333311
+          cargoLock.lockFile = ./Cargo.lock; 
+          
+          # for other makeRustPlatform features see: 
+          # https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/rust.section.md#cargo-features-cargo-features
         };
 
         # called when `nix develop` is invoked
         devShells.default = pkgs.mkShell {
-          buildInputs = with fenix.packages.${system}.minimal; [ cargo rustc ]; # use nightly rustc & cargo by fenix 
+
+          # use nightly cargo & rustc provided by fenix. Add for packages for the dev shell here
+          buildInputs = with fenix.packages.${system}.minimal; [ cargo rustc ]; 
         };
       }
     );
