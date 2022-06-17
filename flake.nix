@@ -29,7 +29,17 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with fenix.packages.${system}.minimal; [ cargo rustc ];
+          buildInputs = with fenix.packages.${system}.complete; [
+            (with fenix.packages.${system}.complete; [
+              cargo
+              rustc
+              rust-src
+            ])
+            (with pkgs; [
+              pkg-config
+            ])
+          ];
+          RUST_SRC_PATH = "${fenix.packages.${system}.complete.rust-src}/lib/rustlib/src/rust/library";
         };
       }
     );
