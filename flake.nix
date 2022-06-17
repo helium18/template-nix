@@ -12,10 +12,10 @@
 
   outputs = { self, nixpkgs, flake-utils, fenix, ... }:
     flake-utils.lib.eachDefaultSystem (system:
-      let 
+      let
         pname = "template";
         version = "0.1.0";
-        pkgs = nixpkgs.legacyPackages.${system}; 
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       {
         defaultPackage = (pkgs.makeRustPlatform {
@@ -25,11 +25,11 @@
           version = version;
           src = ./.;
 
-          cargoLock.lockFile = ./Cargo.lock; 
+          cargoLock.lockFile = ./Cargo.lock;
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with fenix.packages.${system}.minimal; [ cargo rustc ]; 
+          buildInputs = with fenix.packages.${system}.minimal; [ cargo rustc ];
         };
       }
     );
