@@ -25,7 +25,7 @@ This repository has two branches
 1. `main`: normal verbose branch. For those who prefer explanations
 2. `non-verbose`: you know your stuff and don't want explanations. You'll get a clean template with no comments
 
-fork, clone and use it to your liking
+then click on the `Use this template` button (https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 <br><br>
 #### Commands 
 - `nix develop`: opens up a `bash` shell with the bare minimum Rust toolset (`cargo` & `rustc`) by default
