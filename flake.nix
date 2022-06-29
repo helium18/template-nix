@@ -46,6 +46,8 @@
               cargo
               rustc
               rust-src
+              clippy
+              rustfmt
             ])
             (with pkgs; [
               pkg-config
