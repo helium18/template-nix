@@ -26,20 +26,13 @@ This repository has two branches
 2. `non-verbose`: you know your stuff and don't want explanations. You'll get a clean template with no comments
 
 then click on the `Use this template` button (https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+
+run `nix flake update .` to update the flake lock
 <br><br>
 #### Commands 
 - `nix develop`: opens up a `bash` shell with the bare minimum Rust toolset (`cargo` & `rustc`) by default
 - `nix build` : builds the Rust project. Outputs the binary to `./result/bin/<name>`
 - `nix run`: runs the Rust program.
-<br><br>
-#### Note
-The project provides a `Cargo.lock` and `flake.lock` by default.
-
-It's recommended to remove both of them (only for the initial setup) and then run `nix develop` followed by `cargo run` to generate new `Cargo.lock` & `flake.lock`s. You might get errors such as:
-
-1. `warning: Git tree '/path/to/template-nix' is dirty`: fix it by adding all the new files and committing them (`git add . && git commit`)
-
-2. `error: getting status of '/nix/store/bryn21y46m9bpl8bp7gg4jfbhb4a4scz-source/Cargo.lock': No such file or directory`: fix it by adding and committing `flake.lock` to the git repository.
 <br><br>
 #### FAQ
 ... Waiting for questions ... (raise an issue in case of doubts)
